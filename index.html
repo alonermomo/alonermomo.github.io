@@ -198,6 +198,88 @@
 
       <div class="body-wrap">
   
+    <article id="post-iOS开发工具篇之cocoapods" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/18/iOS开发工具篇之cocoapods/" class="article-date">
+  	<time datetime="2016-10-18T15:06:29.000Z" itemprop="datePublished">2016-10-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/18/iOS开发工具篇之cocoapods/">iOS开发工具篇之cocoapods</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##cocoapods使用教程<br>  如果你是一名具有一年或者迭代过一个项目三个版本以上的ios开发者我想你对友盟,极光,shareSDK….一定不陌生,可是如果他们版本更新你该怎么办?<br>  如果你说就这么放着不管,那么恭喜你你失去了一个程序员最基本的求知欲.如果你手动删除从新在添加,那我只能夸你手太勤快,但是脑袋太懒.如果你遇到sdk更新的问题只需要百度一下就会看到排山蹈海的cocoapods的使用教程.</p>
+<p>  说了那么多那么cocoapods到底是干嘛的?就是第三方库管理软件只需要简单的指令就可以实现第三方库的添加,移除,更新.到底有多方便谁用谁知道.</p>
+<p> 安装cocoapods的过程很简单但是也有很多坑只有自己走过才能体会其中的辛酸</p>
+<p>###第一步安装cocoapods</p>
+<pre><code>sudo gem install cocoapods
+</code></pre><p> 由于cocoapods使用的是国外的源在我们大天国是不允许使用的除非你翻墙,但是我们有更好的办法就是替换成淘宝源</p>
+<p>###第二步替换淘宝源</p>
+<p> 1.移除原有源</p>
+<pre><code>gem source --remove https://rubygems.org/
+</code></pre><p> 2.替换淘宝源</p>
+<pre><code>gem source -a https://ruby.taobao.org/
+</code></pre><p> 3.验证是否替换成功</p>
+<pre><code>gem source -l
+</code></pre><p> 4.最后就可以通过 <em>sudo gem install cocoapods</em> 正常安装 <em>cocoapods</em> 了</p>
+<p>###第三步如何使用cocoapods<br>要使用<em>cocoapods</em>,必须要有一个Podfile文件</p>
+<pre><code>cd &quot;你自己的工程目录&quot;
+
+touch Podfile //创建一个Podfile文件
+</code></pre><p>###第四步搜索想要添加的库</p>
+<pre><code>pod search AFNetworking //搜索想要添加的库
+
+vi Podfile //进入编辑模式
+
+//添加库
+pod &apos;AFNetworking&apos;, &apos;~&gt; 2.0&apos;
+</code></pre><p>然后按下 <em>esc</em> 键,输入 <em>:wq</em> 完成保存,在终端输入 <em>pod install</em> 完成安装</p>
+<p>在安装完成之后我们的工程里会多出一个  <em>xcworkspace</em> 的文件,以后打开这个文件就可以了</p>
+<p>##第三方库的使用<br>我们已经将第三方库添加完了可是他的使用和手动添加的有什么不一样那?</p>
+<pre><code>#import &lt;要引用的库名&gt;
+</code></pre><p>就这样以后就可以告别手动添加库的烦恼了</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-一切从新开始" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
